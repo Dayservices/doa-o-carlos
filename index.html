@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campanha de Apoio - Carlos Eduardo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+        
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            background-color: #f0fdf4; /* Fundo verde bem clarinho */
+        }
+        
+        .header-gradient {
+            background: linear-gradient(to right, #064e3b, #065f46);
+        }
+
+        .pix-gradient {
+            background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+        }
+
+        .pix-box { 
+            background-color: #ecfdf5; 
+            border: 2px dashed #10b981; 
+        }
+
+        /* Efeito de destaque suave nas fotos */
+        .photo-card img {
+            border: 3px solid white;
+            transition: transform 0.2s;
+        }
+        .photo-card img:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- Header com fundo verde escuro para destaque -->
+    <header class="header-gradient py-12 px-4 text-center shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl md:text-5xl font-black uppercase text-white tracking-tight mb-4">
+                Apoio ao Carlos Eduardo
+            </h1>
+            <div class="h-1 w-24 bg-emerald-400 mx-auto mb-4 rounded-full"></div>
+            <p class="text-emerald-50 max-w-2xl mx-auto text-lg font-medium">
+                Grave acidente resultou em perda total do veículo. <br class="hidden md:block"> 
+                Precisamos de ajuda para cobrir os prejuízos e custos emergenciais.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8">
+        
+        <div class="grid md:grid-cols-5 gap-8">
+            
+            <!-- Coluna da Esquerda: Imagens e Relato -->
+            <div class="md:col-span-3 space-y-6">
+                
+                <!-- Galeria Técnica do Acidente -->
+                <div class="bg-white rounded-2xl shadow-sm border border-emerald-100 p-4 photo-card">
+                    <h3 class="text-xs font-bold text-emerald-600 uppercase mb-4 tracking-widest flex items-center gap-2">
+                        <i class="fa-solid fa-camera"></i> Registros da colisão
+                    </h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <!-- Substituir nomes das imagens aqui -->
+                        <img src="/foto1.jpg" alt="Acidente frontal" class="rounded-xl h-48 w-full object-cover shadow-sm">
+                        <img src="/foto4.jpg" alt="Acidente lateral" class="rounded-xl h-48 w-full object-cover shadow-sm">
+                        <img src="/foto3.jpg" alt="Impacto motor" class="rounded-xl h-48 w-full object-cover shadow-sm">
+                        <img src="/foto2.jpg" alt="Localização" class="rounded-xl h-48 w-full object-cover shadow-sm">
+                    </div>
+                </div>
+
+                <!-- O Fato -->
+                <div class="bg-white rounded-2xl shadow-md border-l-8 border-emerald-600 p-8 leading-relaxed">
+                    <h2 class="text-2xl font-bold mb-4 text-emerald-900 uppercase tracking-wide flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-emerald-600"></i> Relato do Acidente
+                    </h2>
+                    <p class="mb-4 text-slate-700 text-lg">
+                        O Carlos Eduardo sofreu um mal súbito enquanto dirigia, perdendo a consciência ao volante. Sem controle, o veículo colidiu violentamente contra a traseira de uma caminhonete na avenida.
+                    </p>
+                    <div class="bg-red-50 border border-red-100 p-4 rounded-xl mb-4 text-red-800 font-bold">
+                        <i class="fa-solid fa-triangle-exclamation"></i> O resultado foi a destruição completa do automóvel (perda total).
+                    </div>
+                    <p class="text-slate-600">
+                        O veículo era essencial para o dia a dia e trabalho do Carlos. Além do prejuízo material direto, existem custos adicionais decorrentes do acidente que ele não consegue arcar sozinho neste momento. Estamos organizando esta campanha para viabilizar sua recuperação financeira.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Coluna da Direita: Ação de Doação -->
+            <div class="md:col-span-2 space-y-4">
+                
+                <div class="pix-gradient rounded-[2rem] p-8 shadow-2xl text-white border-b-4 border-emerald-900">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-white p-2 rounded-lg">
+                            <i class="fa-brands fa-pix text-3xl text-emerald-700"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight">Contribua Agora</h3>
+                    </div>
+
+                    <p class="text-emerald-100 text-xs mb-6 uppercase font-bold tracking-widest opacity-80">
+                        Ajude a recuperar o prejuízo
+                    </p>
+
+                    <div class="pix-box p-5 rounded-2xl mb-6 text-center shadow-inner">
+                        <span class="block text-[10px] text-emerald-700 uppercase font-black mb-2">Chave PIX (Celular)</span>
+                        <div id="pixKey" class="text-2xl font-mono font-black text-slate-800 leading-none">17997392385</div>
+                        <p class="text-[11px] mt-4 text-emerald-800 font-bold uppercase tracking-tighter">Carlos Eduardo Cara Lopes</p>
+                    </div>
+
+                    <button onclick="copyPix()" class="w-full bg-emerald-400 text-emerald-950 font-black py-5 rounded-2xl hover:bg-white transition-all flex items-center justify-center gap-3 shadow-xl active:transform active:scale-95 uppercase tracking-wider text-sm">
+                        <i class="fa-regular fa-copy text-lg"></i>
+                        Copiar Chave PIX
+                    </button>
+
+                    <p id="copyMessage" class="mt-4 text-center text-white text-sm font-bold hidden bg-emerald-800/50 py-2 rounded-lg border border-emerald-400/30">
+                        <i class="fa-solid fa-check-double"></i> Chave Copiada com sucesso!
+                    </p>
+                </div>
+
+                <!-- Botão de Compartilhar -->
+                <div class="bg-white border border-emerald-100 rounded-2xl p-6 text-center shadow-sm">
+                    <p class="text-xs text-slate-400 mb-4 font-bold uppercase tracking-widest">Ajude a divulgar</p>
+                    <a href="https://api.whatsapp.com/send?text=Campanha de apoio ao Carlos Eduardo. Ele sofreu um acidente grave com perda total do veículo e precisa de ajuda para recuperar o prejuízo. Veja aqui como ajudar: [LINK_DA_PAGINA]" target="_blank" class="w-full flex items-center justify-center gap-2 bg-green-100 text-green-700 font-bold py-3 rounded-xl hover:bg-green-600 hover:text-white transition-all shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        Enviar via WhatsApp
+                    </a>
+                </div>
+
+                <div class="text-center px-4">
+                    <p class="text-emerald-700/50 text-[10px] uppercase font-bold tracking-widest">Sua doação faz a diferença</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-12 text-emerald-800/40 text-[10px] uppercase font-bold tracking-[0.2em]">
+        Campanha de arrecadação direta organizada por amigos.
+    </footer>
+
+    <script>
+        function copyPix() {
+            const pixKey = "17997392385";
+            navigator.clipboard.writeText(pixKey).then(() => {
+                const msg = document.getElementById('copyMessage');
+                msg.classList.remove('hidden');
+                setTimeout(() => msg.classList.add('hidden'), 4000);
+            });
+        }
+    </script>
+
+</body>
+</html>
